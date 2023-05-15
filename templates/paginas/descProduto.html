@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descrição do Produto</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+{% block main %}
+
+    <h1>Descrição do Produto</h1>
+    {% if produto %}
+      
+        <form action="/carrinho" method="POST">
+            <input type="hidden" name="produto_id" value="{{ produto.id }}">
+            <input type="number" name="quantidade" value="1" min="1">
+            <button type="submit">Adicionar ao Carrinho</button>
+        </form>
+    {% else %}
+        <p>Produto não encontrado.</p>
+    {% endif %}
+
+    {% endblock %}
+</body>
+</html>

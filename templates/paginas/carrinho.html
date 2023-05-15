@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block main %}
+    <h1>Carrinho de Compras</h1>
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+        </tr>
+        {% for item in carrinho %}
+            <tr>
+                <td>{{ item.produto.nome }}</td>
+                <td>R$ {{ item.produto.preco }}</td>
+                <td>{{ item.quantidade }}</td>
+                <td>R$ {{ item.produto.preco * item.quantidade }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/confirmacao" method="POST">
+        <button type="submit">Confirmar Compra</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

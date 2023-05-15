@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+{% block main %}
+    <h1>Lista de Produtos</h1>
+    <p>
+        *TABLETS <br>
+        *SMARTPHONE<br>
+        *COMPUTADORES<br>
+        *TVs<br>
+    </p>
+    <button type= "submit" onclick="confirmacao()">Adicionar ao Carrinho</button>
+ {% endblock %}
+        
+ <script>
+    function confirmacao() {
+        window.location.href = "confirmacao.html";
+    }
+</script>
+</body>
+</html>
